@@ -12,12 +12,14 @@ pipeline {
             steps {
                 echo "${params.Greeting} World!"
                 echo 'Building..'
+		bat "mvn clean"
                 echo "$input"
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
+		bat "mvn test"
                 echo ''
             }
         }
